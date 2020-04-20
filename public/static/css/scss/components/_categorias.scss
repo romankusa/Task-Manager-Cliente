@@ -1,0 +1,227 @@
+.categorias-container {
+    margin-top: 5rem;
+
+    .categoria-individual-container {
+
+
+        .listado-tareas-container {
+            padding: 1rem 0;
+
+            .tarea-individual-container {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                font-weight: $medium;
+                font-size: .8rem;
+                padding: 1rem 0;
+
+                p {
+                    margin-left: .5rem;
+                    transition: opacity .3s ease;
+                }
+
+                .eliminar {
+                    color: $rojo;
+                    margin-left: auto;
+                    cursor: pointer;
+                    opacity: 0;
+                    transition: all .3s ease;
+                }
+
+                &:hover {
+
+                    .eliminar {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            //agregar tarea
+
+            .agregar-tarea-container {
+                margin: 1rem 0;
+                display: flex;
+
+                img {
+                    max-width: 10px;
+                    max-height: 10px;
+                    margin-right: .8rem;
+                    cursor: pointer;
+                    transition: all .3s ease;
+                    margin-top: .44rem;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                    }
+
+                }
+
+                input {
+                    width: 80px;
+                    margin-right: .4rem;
+                    border: 2px solid $gris;
+                    border-radius: 15px;
+                    padding: .3rem .6rem;
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: 0 0 0 1pt $azul;
+                        border: none;
+                    }
+                }
+
+                button {
+                    font-size: .8rem;
+                    opacity: .3;
+                    cursor: pointer;
+                    transition: all .3s ease;
+                    border: none;
+
+                    &:hover {
+                        filter: brightness(105%);
+                        opacity: .2;
+                    }
+                }
+            }
+        }
+    }
+
+    // agregar categoria
+    .agregar-categoria-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 50px;
+            max-height: 50px;
+            opacity: .3;
+            cursor: pointer;
+            transition: all .3s ease;
+
+            &:hover {
+                filter: brightness(105%);
+                opacity: .2;
+            }
+        }
+
+    }
+
+}
+
+.checkbox {
+
+
+    input[type=checkbox] {
+        display: none;
+        pointer-events: none;
+
+        &+label {
+            cursor: pointer;
+            font-size: .8em;
+            display: grid;
+            grid-template-columns: auto 3fr;
+
+            .svg {
+                width: 2em;
+                stroke: $azul;
+                stroke-width: 5;
+                fill: $blanco;
+
+
+                .box {
+                    stroke-dasharray: 320;
+                    stroke-dashoffset: 0;
+                    fill: white;
+                    transition: stroke-dashoffset .3s linear;
+                }
+
+                .check {
+                    stroke-dasharray: 70;
+                    stroke-dashoffset: 70;
+                    fill: none;
+                    transition: stroke-dashoffset .3s linear;
+                }
+            }
+        }
+
+        &:checked+label {
+            .box {
+                stroke-dashoffset: 320;
+            }
+
+            .check {
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+}
+
+
+// titulos categorias
+.categoria-top {
+    position: relative;
+
+    &:hover {
+        .cancel {
+            opacity: 1;
+        }
+    }
+
+    h3 {
+        font-weight: $bold;
+    }
+
+    .separador {
+        margin-top: .5rem;
+        width: 100%;
+        height: 1px;
+        background: $gris;
+    }
+
+    .cancel {
+        opacity: 0;
+        top: 20%;
+        left: -4%;
+        position: absolute;
+        max-height: 10px;
+        max-width: 10px;
+        z-index: 3;
+        cursor: pointer;
+        transition: all .3s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+
+    // agregar categoria
+    input {
+        margin-bottom: .7rem;
+        border: 2px solid $gris;
+        border-radius: 15px;
+        padding: .5rem .8rem;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 1pt $azul;
+            border: none;
+        }
+    }
+
+
+    button {
+        font-size: .8rem;
+        opacity: .3;
+        cursor: pointer;
+        transition: all .3s ease;
+        border: none;
+        margin-left: .3rem;
+
+        &:hover {
+            filter: brightness(105%);
+            opacity: .2;
+        }
+    }
+}

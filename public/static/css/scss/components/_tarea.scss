@@ -1,0 +1,130 @@
+.lista-tareas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding: 1rem 0;
+    grid-gap: 2rem;
+
+    .tarea-individual-container {
+        background: $blanco;
+        border-radius: 5px 50px 50px 50px;
+        box-shadow: $shadow;
+        width: 190px;
+        height: 165px;
+        margin: 0 auto;
+        padding: 1rem 2rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+
+        @include media("<=tablet") {
+            border-radius: 1px 35px 35px 35px;
+            padding: .7rem 1.6rem 1.6rem 1.6rem;
+            width: 160px;
+        }
+
+
+        h4 {
+            font-size: 1rem;
+            color: $negro;
+            font-weight: $bold;
+            cursor: pointer;
+        }
+
+        .resumen-tareas-container {
+            padding: 2rem 0 .5rem 0;
+
+            p {
+                font-size: .5rem;
+            }
+        }
+
+        .barra-de-progreso-container {
+            width: 100%;
+            height: 6px;
+            position: relative;
+            border-radius: $radio;
+
+            .barra-de-progreso {
+                position: absolute;
+                height: 2px;
+                background: $azul;
+                transition: all .3s ease-in;
+                z-index: 2;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: $gris;
+                z-index: 1;
+            }
+        }
+    }
+
+    // agregar lista
+    .agregar-lista-container {
+        background: none;
+        border: 3px dashed $gris;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+        padding: 3rem 2rem 3.5rem 2rem;
+
+
+
+        .agregar-btn {
+            max-height: 50px;
+            max-width: 50px;
+            opacity: .1;
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                transform: translateY(-4px);
+            }
+        }
+
+        .cancel {
+            max-width: 10px;
+            max-width: 10px;
+            align-self: flex-start;
+            padding-bottom: .5rem;
+            cursor: pointer;
+            transition: all .3s ease;
+
+            &:hover {
+                transform: translateY(-4px);
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            input {
+                border: 2px dashed $gris;
+                border-radius: 15px;
+                padding: .5rem .8rem;
+
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 1pt $azul;
+                    border: none;
+                }
+            }
+
+
+            button {
+                border: none;
+                background: none;
+                align-self: flex-end;
+                margin-top: .5rem;
+            }
+        }
+    }
+}

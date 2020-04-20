@@ -1,0 +1,90 @@
+.tarea-display-container {
+    flex: 1;
+    box-shadow: $shadow;
+    border-radius: 10%;
+    background: $blanco;
+    height: 645px;
+    overflow-y: auto;
+
+
+    .display-container {
+        padding: 4rem;
+
+
+        .display-top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+
+            h2 {
+                width: 290px;
+                font-size: 2rem;
+                font-weight: $black;
+            }
+
+            .opciones {
+                display: flex;
+                justify-content: space-between;
+                height: 40px;
+                width: 40px;
+                padding-top: 1rem;
+                cursor: pointer;
+                transition: filter .3s ease;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    filter: brightness(80%);
+                }
+
+                .opciones-item {
+                    border-radius: 50%;
+                    width: 10px;
+                    height: 10px;
+                    background: $gris;
+
+                }
+            }
+
+            .opciones-container {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                background: $blanco;
+                box-shadow: $shadow;
+                width: 200px;
+                padding: 1rem .5rem;
+
+                .opcion {
+                    border-bottom: 1px solid $gris;
+                    padding: 1rem;
+
+                    p {
+                        font-size: .8rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+
+        }
+
+        .selecciona-display-container {
+            padding: 5rem;
+            border: 2px dashed $gris;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: $radio;
+
+
+        }
+
+    }
+
+
+}

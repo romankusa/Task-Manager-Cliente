@@ -1,0 +1,112 @@
+.tareas-background {
+    width: 100%;
+    height: 100%;
+    background: $claro;
+
+
+    .tareas-container {
+        display: flex;
+
+        @include media("<=1000px") {
+            flex-direction: column;
+        }
+
+        @include media("<=tablet") {
+            padding: 1rem .2rem;
+        }
+
+        .lista-tareas-container {
+            padding: 1rem 2rem;
+            flex: 1;
+
+            @include media("<=tablet") {
+                padding: 0rem .5rem;
+            }
+
+            @include media("<=phone") {
+                padding: 0rem 0.3rem;
+            }
+
+            .sub-menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .cerrar-sesion {
+                    font-size: .8rem;
+                    cursor: pointer;
+                    position: relative;
+                    width: 85px;
+                    transition: all .3s ease;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        display: block;
+                        right: 0;
+                        background: $azul;
+                        transition: 0.4s ease;
+                    }
+
+                    &:hover {
+                        color: $azul;
+
+                        &:after {
+                            width: 100%;
+                            left: 0;
+                            background: $azul;
+                        }
+                    }
+                }
+            }
+
+            .buttons-container {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .siguiente,
+                .anterior {
+                    position: relative;
+                    transition: all .3s ease;
+                    font-size: .9rem;
+                    cursor: pointer;
+
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        display: block;
+                        right: 0;
+                        background: $azul;
+                        transition: 0.4s ease;
+                    }
+
+                    &:hover {
+                        color: $azul;
+
+                        &:after {
+                            width: 100%;
+                            left: 0;
+                            background: $azul;
+                        }
+                    }
+                }
+
+                .siguiente {
+                    width: 70px;
+                }
+
+                .anterior {
+                    width: 61px;
+                }
+            }
+        }
+
+    }
+}
