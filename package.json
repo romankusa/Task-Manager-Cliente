@@ -9,7 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "framer-motion": "^1.10.3",
     "next": "9.3.4",
     "react": "16.13.1",
